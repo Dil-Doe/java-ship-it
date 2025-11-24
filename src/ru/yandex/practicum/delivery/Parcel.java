@@ -1,11 +1,11 @@
 package ru.yandex.practicum.delivery;
 
 public abstract class Parcel {
-    private String description;
-    private int weight;
-    private String deliveryAddress;
-    private int sendDay;
-    private ParcelType type;
+    protected final String description;
+    protected final int weight;
+    protected final String deliveryAddress;
+    protected final int sendDay;
+    protected final ParcelType type;
 
     public Parcel(String description, int weight, String deliveryAddress, int sendDay, ParcelType type) {
         this.description = description;
@@ -13,14 +13,6 @@ public abstract class Parcel {
         this.deliveryAddress = deliveryAddress;
         this.sendDay = sendDay;
         this.type = type;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getSendDay() {
-        return sendDay;
     }
 
     public void packageItem() {
@@ -35,7 +27,13 @@ public abstract class Parcel {
         return weight * type.getBaseCost();
     }
 
+    // нужны только для тестов:
+
     public int getWeight() {
         return weight;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

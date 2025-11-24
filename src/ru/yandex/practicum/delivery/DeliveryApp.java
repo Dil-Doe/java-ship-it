@@ -7,12 +7,12 @@ import java.util.Scanner;
 public class DeliveryApp {
 
     private static final Scanner scanner = new Scanner(System.in);
-    private static List<Parcel> allParcels = new ArrayList<>();
-    private static List<Trackable> trackableParcels = new ArrayList<>();
+    private static final List<Parcel> allParcels = new ArrayList<>();
+    private static final List<Trackable> trackableParcels = new ArrayList<>();
 
-    private static ParcelBox<StandardParcel> standardBox = new ParcelBox<>(50);
-    private static ParcelBox<FragileParcel> fragileBox = new ParcelBox<>(20);
-    private static ParcelBox<PerishableParcel> perishableBox = new ParcelBox<>(15);
+    private static final ParcelBox<StandardParcel> standardBox = new ParcelBox<>(50);
+    private static final ParcelBox<FragileParcel> fragileBox = new ParcelBox<>(20);
+    private static final ParcelBox<PerishableParcel> perishableBox = new ParcelBox<>(15);
 
     public static void main(String[] args) {
         boolean running = true;
@@ -162,7 +162,7 @@ public class DeliveryApp {
 
         System.out.println("Содержимое коробки:");
         for (Parcel p : box) {
-            System.out.println(" - " + p.getDescription());
+            System.out.println(" - " + p.description);
         }
     }
 

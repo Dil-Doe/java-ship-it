@@ -13,17 +13,18 @@ public class ParcelBox<T extends Parcel> {
         this.maxWeight = maxWeight;
     }
 
-    public void addParcel(T parcel) {
+    public boolean addParcel(T parcel) {
         int newWeight = currentWeight + parcel.getWeight();
 
         if (newWeight > maxWeight) {
             System.out.println("Нельзя добавить посылку: превышен максимальный вес коробки.");
-            return;
+            return false;
         }
 
         parcels.add(parcel);
         currentWeight = newWeight;
         System.out.println("Посылка добавлена в коробку.");
+        return true;
     }
 
     public List<T> getAllParcels() {
